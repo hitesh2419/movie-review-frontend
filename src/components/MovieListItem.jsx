@@ -31,6 +31,9 @@ const MovieListItem = ({ movie, afterDelete, afterUpdate }) => {
     setSelectedMovieId(movie.id);
   };
 
+  const hideUpdateModal=()=>{
+    setShowUpdateModal(false)
+  }
   const handleOnUpdate = (movie) => {
     afterUpdate(movie);
     setShowUpdateModal(false);
@@ -60,6 +63,7 @@ const MovieListItem = ({ movie, afterDelete, afterUpdate }) => {
           movieId={selectedMovieId}
           visible={showUpdateModal}
           onSuccess={handleOnUpdate}
+          onClose={hideUpdateModal}
         />
       </div>
     </>
